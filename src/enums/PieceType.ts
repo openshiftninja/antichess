@@ -13,3 +13,15 @@ export enum PieceType {
   BLACK_KING,
   EMPTY_SQUARE,
 }
+
+export const isWhite = (pieceType: PieceType) => {
+  if (pieceType === PieceType.EMPTY_SQUARE) {
+    throw Error("check for white on empty square!");
+  }
+  return pieceType === PieceType.WHITE_PAWN ||
+    pieceType === PieceType.WHITE_ROOK ||
+    pieceType === PieceType.WHITE_KNIGHT ||
+    pieceType === PieceType.WHITE_BISHOP ||
+    pieceType === PieceType.WHITE_QUEEN ||
+    pieceType === PieceType.WHITE_KING;
+};

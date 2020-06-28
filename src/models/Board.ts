@@ -1,13 +1,92 @@
-import { Square } from './Square';
+import { PieceType } from '../enums/PieceType';
+
+const defaultBoardSetup: PieceType[][] = [
+  [
+    PieceType.BLACK_ROOK,
+    PieceType.BLACK_KNIGHT,
+    PieceType.BLACK_BISHOP,
+    PieceType.BLACK_QUEEN,
+    PieceType.BLACK_KING,
+    PieceType.BLACK_BISHOP,
+    PieceType.BLACK_KNIGHT,
+    PieceType.BLACK_ROOK,
+  ],
+  [
+    PieceType.BLACK_PAWN,
+    PieceType.BLACK_PAWN,
+    PieceType.BLACK_PAWN,
+    PieceType.BLACK_PAWN,
+    PieceType.BLACK_PAWN,
+    PieceType.BLACK_PAWN,
+    PieceType.BLACK_PAWN,
+    PieceType.BLACK_PAWN,
+  ],
+  [
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+  ],
+  [
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+  ],
+  [
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+  ],
+  [
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+    PieceType.EMPTY_SQUARE,
+  ],
+  [
+    PieceType.WHITE_PAWN,
+    PieceType.WHITE_PAWN,
+    PieceType.WHITE_PAWN,
+    PieceType.WHITE_PAWN,
+    PieceType.WHITE_PAWN,
+    PieceType.WHITE_PAWN,
+    PieceType.WHITE_PAWN,
+    PieceType.WHITE_PAWN,
+  ],
+  [
+    PieceType.WHITE_ROOK,
+    PieceType.WHITE_KNIGHT,
+    PieceType.WHITE_BISHOP,
+    PieceType.WHITE_QUEEN,
+    PieceType.WHITE_KING,
+    PieceType.WHITE_BISHOP,
+    PieceType.WHITE_KNIGHT,
+    PieceType.WHITE_ROOK,
+  ],
+];
 
 export class Board {
-  public readonly squares: Square[];
+  public readonly pieceTypes: PieceType[][];
+
   public constructor() {
-    this.squares = [];
-    for (let row = 0; row < 8; row += 1) {
-      for (let col = 0; col < 8; col += 1) {
-        this.squares.push(new Square(row, col));
-      }
-    }
+    this.pieceTypes = defaultBoardSetup;
   }
 }
