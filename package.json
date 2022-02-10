@@ -16,7 +16,7 @@
     "react-game-engine": "^1.0.0",
     "regenerator-runtime": "^0.13.5",
     "history": "^5.0.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "sass": "^1.26.9"
